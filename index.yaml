@@ -1,13 +1,39 @@
 apiVersion: v1
 entries:
+  mariadb:
+  - appVersion: 10.1.30
+    created: 2018-02-01T14:16:56.647245078+09:00
+    description: Fast, reliable, scalable, and easy to use open-source relational
+      database system. MariaDB Server is intended for mission-critical, heavy-load
+      production systems as well as for embedding into mass-deployed software.
+    digest: 3b421feec01d4926232b19a466fca84033b940c23a81dfdc5f702d9a0619c96f
+    engine: gotpl
+    home: https://mariadb.org
+    icon: https://bitnami.com/assets/stacks/mariadb/img/mariadb-stack-220x234.png
+    keywords:
+    - mariadb
+    - mysql
+    - database
+    - sql
+    - prometheus
+    maintainers:
+    - email: containers@bitnami.com
+      name: bitnami-bot
+    name: mariadb
+    sources:
+    - https://github.com/bitnami/bitnami-docker-mariadb
+    - https://github.com/prometheus/mysqld_exporter
+    urls:
+    - https://raw.githubusercontent.com/funnylab/helm-repo/master/mariadb-2.1.3.tgz
+    version: 2.1.3
   mychart:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-01-29T15:30:01.009004029+09:00
+    created: 2018-02-01T14:16:56.647526238+09:00
     description: A Helm chart for Kubernetes
-    digest: b824feaa0f9583ef45daf00cea9ee532e13869e668fb82cb7ec047a5f011e8a7
+    digest: 940c6d7a608bde34bded393d1b9d103c7da19cbce0a38878c5d26c54af8ff7a3
     name: mychart
     urls:
-    - mychart-0.1.0.tgz
+    - https://raw.githubusercontent.com/funnylab/helm-repo/master/mychart-0.1.0.tgz
     version: 0.1.0
-generated: 2018-01-29T15:30:01.008525637+09:00
+generated: 2018-02-01T14:16:56.646583937+09:00
