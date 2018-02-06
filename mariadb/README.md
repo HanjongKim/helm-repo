@@ -45,30 +45,125 @@ The command removes all the Kubernetes components associated with the chart and 
 
 The following tables lists the configurable parameters of the MariaDB chart and their default values.
 
-|          Parameter          |                Description                 |                   Default                   |
-| --------------------------- | ------------------------------------------ | ------------------------------------------- |
-| `image`                     | MariaDB image                              | `bitnami/mariadb:{VERSION}`                 |
-| `service.type`              | Kubernetes service type to expose          | `ClusterIP`                                 |
-| `service.nodePort`          | Port to bind to for NodePort service type  | `nil`                                       |
-| `service.annotations`       | Additional annotations to add to service   | `nil`                                       |
-| `imagePullPolicy`           | Image pull policy.                         | `IfNotPresent`                              |
-| `usePassword`               | Enable password authentication             | `true`                                      |
-| `mariadbRootPassword`       | Password for the `root` user.              | Randomly generated                          |
-| `mariadbUser`               | Username of new user to create.            | `nil`                                       |
-| `mariadbPassword`           | Password for the new user.                 | `nil`                                       |
-| `mariadbDatabase`           | Name for new database to create.           | `nil`                                       |
-| `persistence.enabled`       | Use a PVC to persist data                  | `true`                                      |
-| `persistence.existingClaim` | Use an existing PVC                        | `nil`                                       |
-| `persistence.storageClass`  | Storage class of backing PVC               | `nil` (uses alpha storage class annotation) |
-| `persistence.accessMode`    | Use volume as ReadOnly or ReadWrite        | `ReadWriteOnce`                             |
-| `persistence.size`          | Size of data volume                        | `8Gi`                                       |
-| `resources`                 | CPU/Memory resource requests/limits        | Memory: `256Mi`, CPU: `250m`                |
-| `config`                    | Multi-line string for my.cnf configuration | `nil`                                       |
-| `metrics.enabled`           | Start a side-car prometheus exporter       | `false`                                     |
-| `metrics.image`             | Exporter image                             | `prom/mysqld-exporter`                      |
-| `metrics.imageTag`          | Exporter image                             | `v0.10.0`                                   |
-| `metrics.imagePullPolicy`   | Exporter image pull policy                 | `IfNotPresent`                              |
-| `metrics.resources`         | Exporter resource requests/limit           | `nil`                                       |
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>image</code></td>
+<td>MariaDB image</td>
+<td><code>bitnami/mariadb:{VERSION}</code></td>
+</tr>
+<tr>
+<td><code>service.type</code></td>
+<td>Kubernetes service type to expose</td>
+<td><code>ClusterIP</code></td>
+</tr>
+<tr>
+<td><code>service.nodePort</code></td>
+<td>Port to bind to for NodePort service type</td>
+<td><code>nil</code></td>
+</tr>
+<tr>
+<td><code>service.annotations</code></td>
+<td>Additional annotations to add to service</td>
+<td><code>nil</code></td>
+</tr>
+<tr>
+<td><code>imagePullPolicy</code></td>
+<td>Image pull policy.</td>
+<td><code>IfNotPresent</code></td>
+</tr>
+<tr>
+<td><code>usePassword</code></td>
+<td>Enable password authentication</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>mariadbRootPassword</code></td>
+<td>Password for the <code>root</code> user.</td>
+<td>Randomly generated</td>
+</tr>
+<tr>
+<td><code>mariadbUser</code></td>
+<td>Username of new user to create.</td>
+<td><code>nil</code></td>
+</tr>
+<tr>
+<td><code>mariadbPassword</code></td>
+<td>Password for the new user.</td>
+<td><code>nil</code></td>
+</tr>
+<tr>
+<td><code>mariadbDatabase</code></td>
+<td>Name for new database to create.</td>
+<td><code>nil</code></td>
+</tr>
+<tr>
+<td><code>persistence.enabled</code></td>
+<td>Use a PVC to persist data</td>
+<td><code>true</code></td>
+</tr>
+<tr>
+<td><code>persistence.existingClaim</code></td>
+<td>Use an existing PVC</td>
+<td><code>nil</code></td>
+</tr>
+<tr>
+<td><code>persistence.storageClass</code></td>
+<td>Storage class of backing PVC</td>
+<td><code>nil</code> (uses alpha storage class annotation)</td>
+</tr>
+<tr>
+<td><code>persistence.accessMode</code></td>
+<td>Use volume as ReadOnly or ReadWrite</td>
+<td><code>ReadWriteOnce</code></td>
+</tr>
+<tr>
+<td><code>persistence.size</code></td>
+<td>Size of data volume</td>
+<td><code>8Gi</code></td>
+</tr>
+<tr>
+<td><code>resources</code></td>
+<td>CPU/Memory resource requests/limits</td>
+<td>Memory: <code>256Mi</code>, CPU: <code>250m</code></td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td>Multi-line string for my.cnf configuration</td>
+<td><code>nil</code></td>
+</tr>
+<tr>
+<td><code>metrics.enabled</code></td>
+<td>Start a side-car prometheus exporter</td>
+<td><code>false</code></td>
+</tr>
+<tr>
+<td><code>metrics.image</code></td>
+<td>Exporter image</td>
+<td><code>prom/mysqld-exporter</code></td>
+</tr>
+<tr>
+<td><code>metrics.imageTag</code></td>
+<td>Exporter image</td>
+<td><code>v0.10.0</code></td>
+</tr>
+<tr>
+<td><code>metrics.imagePullPolicy</code></td>
+<td>Exporter image pull policy</td>
+<td><code>IfNotPresent</code></td>
+</tr>
+<tr>
+<td><code>metrics.resources</code></td>
+<td>Exporter resource requests/limit</td>
+<td><code>nil</code></td>
+</tr></tbody></table>
 
 The above parameters map to the env variables defined in [bitnami/mariadb](http://github.com/bitnami/bitnami-docker-mariadb). For more information please refer to the [bitnami/mariadb](http://github.com/bitnami/bitnami-docker-mariadb) image documentation.
 
