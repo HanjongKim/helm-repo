@@ -33,7 +33,6 @@ entries:
     description: A Helm chart for Kubernetes
     digest: 940c6d7a608bde34bded393d1b9d103c7da19cbce0a38878c5d26c54af8ff7a3
     name: mychart
-    icon: https://raw.githubusercontent.com/funnylab/helm-repo/master/noimage.png
     urls:
     - https://raw.githubusercontent.com/funnylab/helm-repo/master/mychart-0.1.0.tgz
     version: 0.1.0
