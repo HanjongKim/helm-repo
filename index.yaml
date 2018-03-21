@@ -2,7 +2,7 @@ apiVersion: v1
 entries:
   mariadb:
   - appVersion: 10.1.30
-    created: 2018-03-21T15:32:12.828329291+09:00
+    created: 2018-03-21T16:02:03.950784613+09:00
     description: Fast, reliable, scalable, and easy to use open-source relational
       database system. MariaDB Server is intended for mission-critical, heavy-load
       production systems as well as for embedding into mass-deployed software.
@@ -29,11 +29,11 @@ entries:
   mychart:
   - apiVersion: v1
     appVersion: "1.0"
-    created: 2018-03-21T15:32:12.828721307+09:00
+    created: 2018-03-21T16:02:03.95107433+09:00
     description: A Helm chart for Kubernetes
     digest: 940c6d7a608bde34bded393d1b9d103c7da19cbce0a38878c5d26c54af8ff7a3
     name: mychart
     urls:
     - mychart-0.1.0.tgz
     version: 0.1.0
-generated: 2018-03-21T15:32:12.827343129+09:00
+generated: 2018-03-21T16:02:03.95007954+09:00
